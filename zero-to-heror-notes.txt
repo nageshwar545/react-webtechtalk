@@ -1,0 +1,88 @@
+1. Course Intro 
+    What is ReactJS ?
+        ReactJS is library for building user interfaces
+    Benefits 
+      Fast rendering because of virtual DOM
+      JSX 
+      community 
+      developed by facebook 
+      Seo friendly 
+    Drawback
+      It is not a framework 
+      no file structure 
+      everything is JS (view and logic)
+
+2. Getting started
+    Should know html css Js 
+    install nodejs
+    npx - node package execute 
+    react helps to build the SPA (no page reload )
+    to create react app 
+    > npx create-react-app myapp 
+    to run the app > npm run start 
+
+3. How React works ?
+    File structure 3 folders and 5 files 
+    .gitignore - Git will ignore to commit the list files/ folders
+    .readme - contains all about descriptions and instructions (documentation)
+    .packagejson - it contains all the versions, project info and dependencies (packages which is required by the app) and scripts (to run, build, test commands)
+        when we do npm install it checks dependencies and installs the packages 
+    .packagelockjson -  it contains the dependencies of specified version (it will use in prod to install the packages to avoid differences and to maintain consistent workflow in all the environments)
+    nodemodules - where all the packages gets installed 
+    public folder 
+        - contains index.html which is the only one html from server (SPA)
+        - robotxt  file is a web standard file that tells search engine crawlers like google bots which pages they can crawl / can not crawl
+    src folder 
+        - contains indexjs 
+        - testjs files are for unit testing, react uses jest
+        - web Vitals to check the performance 
+        - indexjs is imp file which will have render of the components 
+
+    to create a component, in indexjs 
+    import the React and ReactDOM libs
+    import React from 'react';
+    import ReactDOM from 'react-dom/client';
+    get the reference of root elements which presents in indexhtml and store it in el variable
+    const el = document.getElementById('root');
+    to get control of root for the React use ReactDOM 
+    const root = ReactDOM.createRoot(el);
+    now create a function which will return UI represents or JSX and then render it in DOM as following 
+    root.render(<App />, el);
+    npm start to runs the script which presents in packagejson which will trigger webpack dev server in default port 3000 and to this webpack dev server we are passing config file where the entry app will be the indexjs and and indexhnml files then indexhtml will be served and indexjs will be executed 
+
+
+4. JSX
+    JSX(Javascript XML) is a syntax extension of Javascript that allows you to write HTML-like code in your JS files.It allows you to define the structure and appearance of your React components using a familiar HTML-like syntax. So react using a tool called Babel which is responsible for converting this JSX into Javascript.
+    <h1>Hi</h1> Babel converts into React.createElement('h1', null, 'Hi')
+    - it allows you evaluate expression in JSX syntax {val} it allows only numbers and strings to display in UI but not array or objects or boolean values 
+    - should have one container 
+    - React.Fragment or <></> to avoid extra node
+    - enclose the tags in () if it is morethan one
+    - all the attributes and events must be camelCase (onClick, className, htmlFor) except placeholder
+    - for attributes values use {}
+    - to use inline style need to pass them object 
+      eg: <h1 style = {{color:'#fff', backgroundColor: '#000'}}></h1>
+
+5. Components 
+    A component is a piece of UI that has its own logic and appearance 
+    The main advanctage of the component is reusability  
+    2 types - functional(stateless) and class (statefull)
+
+    functional components are simple JS functions that return some JSX are also called stateless components because they simply  accept data and render them in UI, do not maintain state, no render method, can be defined using arrow functions also, no lifecycle methods, 
+
+    class components are regular ES6 classes that extends component class from react lib they are also known as stateful components because they implement logic and state, it must have render method and return JSX.It has 4 component life cycle hooks they are mounting, updating, Unmounting and error handling And in each phase we have different component lifecycle methods like componentDidMount, componentDidUpdate, componentWillMount etc
+
+6. Props 
+    Props are arguments passed into the react components through HTML attributes, props are case senstive (means prop should be same while passing and accessing), readonly (we can not modify), follow one way data flow (can pass data from child to parent using props)
+
+7. Handling Events
+   Events are actions, performed on the UI page by the user, there are many events like onClick, onChange, onMouseOver, onMouseLeave etc,  
+   eg <button onClick={clickHere}>Click Me</button> 
+      to pass data 
+      <button onClick={() => clickHere('Hi')}>Click Me</button> 
+
+8. States - eg class State
+
+9. Hooks intro and useState hook 
+
+   
